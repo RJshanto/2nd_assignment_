@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>2nd Assignment</title>
+</head>
+<body>
+    <div class="container">
+      <div class="card">
+
+        <div class="card-header text-center"><h2> CALCULATE YOUR BMI :</h2></div>
+        <div class="card-body">
+        <form class="w-50 m-auto " onsubmit="return false" action="">
+            <div class="mb-3 mt-3">
+              <label for="weight" class="form-label">Weight (kg):</label>
+              <input type="text" class="form-control" id="weightinput" placeholder="Enter your weight" name="weight">
+            </div>
+            <div class="mb-3">
+              <label for="height" class="form-label">Height (ft):</label>
+              <input type="text" class="form-control" id="heightinput" placeholder="Enter your height " name="height">
+            </div>
+            <div class="mb-3">
+              <label for="result" class="form-label">BMI Result :</label>
+              <input type="text" class="form-control" id="result" placeholder=" " name="result">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" onclick="calculateBtn()">Check BMI</button>
+          </form>
+        </div>
+        <div class="card-footer text-center">A healthy BMI ranges between 19 and 25 </div>
+    </div>
+  </div>
+
+    <script>
+function calculateBtn(){
+  var weight = document.getElementById("weightinput").value;   
+ var height = document.getElementById("heightinput").value;
+
+ height= height *12;      // now height in inch...
+ height = height *0.025; // now height in meter..
+
+ var result = weight / (height*height);  // using bmi formula ...
+ var result = Math.round(result);  // total result has round figer ...
+
+ document.getElementById("result").value=result;
+
+
+}
+
+    </script>
+</body>
+</html>
